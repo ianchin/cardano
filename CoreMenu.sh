@@ -1,4 +1,4 @@
-echo "Currently Installed Cardano Node version: $(cardano-node --version)"#!/usr/bin/env bash
+#!/usr/bin/env bash
 
 ### Colors ##
 ESC=$(printf '\033') RESET="${ESC}[0m" BLACK="${ESC}[30m" RED="${ESC}[31m"
@@ -32,25 +32,26 @@ Choose an option:  "
     case $ans in
     1)
         /mnt/shared/script/Maintenance.sh
+        ~/CoreMenu.sh
                 ;;
-        2)
+    2)
         echo "Latest Cardano Node Version: $(curl -s https://api.github.com/repos/input-output-hk/cardano-node/releases/latest | jq -r .tag_name)"
         echo "Currently Installed Cardano Node version: $(cardano-node --version)"
         ~/CoreMenu.sh
                 ;;
-        3)
+    3)
         ~/cardano/gLiveView.sh
                 ;;
-        4)
+    4)
         journalctl --unit=cardano-node --follow
                 ;;
-        7)
+    7)
         /mnt/shared/script/CheckReward.sh
                 ;;
-        8)
+    8)
         ~/CurrentEpochSlots.sh
                 ;;
-        9)
+    9)
         ~/NextEpochSlots.sh
                 ;;
     0)
