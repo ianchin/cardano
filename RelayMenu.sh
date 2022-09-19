@@ -32,7 +32,8 @@ Choose an option:  "
         /mnt/shared/script/Maintenance.sh
         clear
         echo "Latest Cardano Node Version: $(curl -s https://api.github.com/repos/input-output-hk/cardano-node/releases/latest | jq -r .tag_name)"
-        ~/Menu.sh
+        echo "Currently Installed Cardano Node version: $(cardano-node --version)"
+        ~/RelayMenu.sh
         ;;
     2)
         ~/cardano/gLiveView.sh
